@@ -1,48 +1,34 @@
 #include <iostream>
+
 using namespace std;
 
 int main()
 {
-	float a = 0, b = 0;
-	char dia;
-	cout << "Vvedit a:";
-	cin >> a;
-	cout << "Vvedit dia (+, -, /, *):";
-	cin >> dia;
-	cout << "Vvedit b:";
+	float a;
+	cout << "vvedite a: ";
+	cin >> a;	
+	float b;
+	cout << "vveditr b: ";
 	cin >> b;
-
-	if (dia == '+')
+	cout << "menu\n + add\n - minus\n / dilenya\n * mnoj\n";
+	char ch;
+	cout << "Vvedit operaciu: ";
+	cin >> ch;
+	switch (ch)
 	{
-		cout << "Vidpovid = " << a + b;
-	}
-	else
-	{
-		if (dia == '-')
+	case '+':cout << "add = " << a + b << "\n";
+		break;
+	case '-':cout << "minnus = " << a - b << "\n";
+		break;
+	case '*':cout << "mnoj = " << a * b << "\n";
+		break;
+	case '/':
+		if (b != 0)
 		{
-			cout << "Vidpovid = " << a - b;
+			cout << "dilenya = " << a / b << "\n";
 		}
 		else
 		{
-			if (dia == '/')
-			{
-				if (b == 0)
-				{
-					cout << "Ne mojna diliti na nyl!!";
-				}
-				else
-				{
-					cout << "Vidpovid = " << a / b;
-				}
-			}
-			else
-			{
-				if (dia == '*')
-				{
-					cout << "Vidpovid = " << a * b;
-				}
-			}
-
+			cout << "eror ";
 		}
-	}
 }
